@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torchquery"
+version = "1.1.0"
+authors = [
+  { name="Sundaram Gupta" },
+]
+description = "A professional vectorized tensor engine for neural healing and memory management."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+]
+keywords = ["torch", "pytorch", "tensor", "deep-learning", "neural-healing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.license]
+text = "MIT"
