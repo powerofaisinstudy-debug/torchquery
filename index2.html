@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | torchquery v1.0.0</title>
+    
+    <!-- Modern Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --accent: #00ffcc; 
+            --bg: #080808; 
+            --sidebar: #0f0f0f;
+            --border: rgba(255, 255, 255, 0.05);
+        }
+
+        body { 
+            background-color: var(--bg); 
+            color: #d1d1d1; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+
+        /* Documentation Sidebar */
+        .sidebar {
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: fixed;
+            width: 280px;
+            overflow-y: auto;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 80px 10%;
+        }
+
+        .doc-section {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        h2 { color: #fff; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+        
+        .code-window {
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .method-badge {
+            background: rgba(0, 255, 204, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-item-doc {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+            color: #888;
+            transition: 0.2s;
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+        }
+
+        .nav-item-doc:hover, .nav-item-doc.active {
+            color: var(--accent);
+            background: rgba(0, 255, 204, 0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wip-banner">
+    <div class="container-fluid text-center py-2">
+        <span class="text-[10px] font-black uppercase tracking-[0.4em]">
+            ⚠️ Development Status: <span class="text-white">50% Complete</span> | 
+            Next Update: <span class="text-[#00ffcc]">CUDA Acceleration</span>
+        </span>
+    </div>
+</div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar py-10 hidden md:block">
+        <div class="px-8 mb-10">
+            <a href="index.html" class="text-white font-black text-xl tracking-tighter text-decoration-none">
+                torchquery<span class="text-[#00ffcc]">.</span>
+            </a>
+        </div>
+        
+        <nav>
+            <div class="px-8 text-[10px] uppercase tracking-widest text-white/30 mb-4 font-bold">Getting Started</div>
+            <a href="#install" class="nav-item-doc active">Quick Installation</a>
+            <a href="#engine" class="nav-item-doc">Core Engine</a>
+            
+            <div class="px-8 text-[10px] uppercase tracking-widest text-white/30 mt-8 mb-4 font-bold">Modules</div>
+            <a href="#sdc" class="nav-item-doc">SDCEngine (Billion-Scale)</a>
+            <a href="#shield" class="nav-item-doc">Distributed Shield</a>
+            <a href="#encoder" class="nav-item-doc">Feature Encoder</a>
+        </nav>
+    </aside>
+
+    <a href="index2.html#sdc" class="inline-flex items-center gap-2 text-[#00ffcc] text-[10px] font-black uppercase tracking-widest hover:gap-4 transition-all">
+        Technical Specs 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg>
+    </a>
+</div>
+
+<!-- Inside index2.html -->
+<section id="sdc" class="doc-section">
+    <div class="method-badge mb-3">Scaling</div>
+    <h2>SDCEngine.protect()</h2>
+    <p>Details about billion-scale protection go here...</p>
+</section>
+
+    <!-- Main Documentation Area -->
+    <main class="main-content">
+        
+        <section id="install" class="doc-section">
+            <div class="method-badge mb-3">Setup</div>
+            <h2>Quick Installation</h2>
+            <p class="text-gray-500 mb-6">Install the high-performance engine via PyPI to start querying billion-scale tensors.</p>
+            <div class="code-window text-[#00ffcc]">
+                $ pip install torchquery
+            </div>
+        </section>
+
+        <section id="sdc" class="doc-section">
+            <div class="method-badge mb-3">Scaling</div>
+            <h2>SDCEngine.protect()</h2>
+            <p class="text-gray-500 mb-4">
+                Memory-safe path for massive tensors. Uses chunked streaming to keep RAM usage flat even with 1B+ parameters.
+            </p>
+            <div class="code-window">
+                <code class="text-gray-300">
+                    <span class="text-purple-400">from</span> torchquery <span class="text-purple-400">import</span> SDCEngine<br><br>
+                    <span class="text-gray-500"># Handles tensors > 100M elements automatically</span><br>
+                    clean_tensor = SDCEngine.protect(large_tensor, sigma=10.0)
+                </code>
+            </div>
+        </section>
+
+        <section id="shield" class="doc-section">
+            <div class="method-badge mb-3">Clusters</div>
+            <h2>DistributedShield.sync_protect()</h2>
+            <p class="text-gray-500 mb-4">
+                Synchronized SDC Protection for Multi-GPU environments. This ensures all nodes heal based on global statistics.
+            </p>
+            <div class="code-window">
+                <code class="text-gray-300">
+                    <span class="text-purple-400">from</span> torchquery <span class="text-purple-400">import</span> DistributedShield<br><br>
+                    <span class="text-gray-500"># All-Reduce synchronized healing</span><br>
+                    DistributedShield.sync_protect(tensor, is_weight=True)
+                </code>
+            </div>
+        </section>
+
+        <footer class="py-10 text-white/20 text-xs tracking-widest">
+            ENGINEERED BY GREATLEXLABS &copy; 2026
+        </footer>
+    </main>
+
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.nav-item-doc').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active state
+                document.querySelectorAll('.nav-item-doc').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // --- torchquery Documentation Logic ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.nav-item-doc');
+    const sections = document.querySelectorAll('.doc-section');
+
+    // 1. Smooth Scrolling with Offset
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 40, // Offset for top padding
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // 2. ScrollSpy: Highlight sidebar based on scroll position
+    window.addEventListener('scroll', () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').substring(1) === current) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // 3. Add "Copy" button to code windows
+    document.querySelectorAll('.code-window').forEach(windowEl => {
+        const copyBtn = document.createElement('button');
+        copyBtn.innerText = "Copy";
+        copyBtn.className = "absolute top-2 right-2 text-[10px] uppercase font-bold text-white/30 hover:text-[#00ffcc] transition";
+        
+        windowEl.appendChild(copyBtn);
+
+        copyBtn.addEventListener('click', () => {
+            const code = windowEl.innerText.replace("Copy", "").trim();
+            navigator.clipboard.writeText(code);
+            copyBtn.innerText = "Copied!";
+            setTimeout(() => copyBtn.innerText = "Copy", 2000);
+        });
+    });
+});
+    </script>
+</body>
+</html>
