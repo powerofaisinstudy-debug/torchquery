@@ -59,5 +59,9 @@ weights[512, 512] = float('nan')  # Simulated Silent Data Corruption (SDC)
 healed_weights = tq.heal(weights, where="value == NaN", replace_with=0.0)
 
 print("Tensor healed successfully on device:", healed_weights.device)
+
+
+---
+
 📈 Performance AdvantageOperationPandas (CPU Baseline)TorchQuery (NVIDIA GPU / Colab)Data TransferForces Device-to-Host (Slow)0ms (Stays Native on GPU)Mask EvaluationSequential / Single-ThreadedParallelized Vector KernelsLarge Tensor ScalingMemory BottleneckBlazing Fast CUDA Streams📦 InstallationBashpip install torchquery
 Built with 🧡 for the PyTorch Community. Keep your weights safe, and your training loops stable.
