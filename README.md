@@ -1,7 +1,5 @@
 
 
-#TorchQuery 🛡️
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/powerofaisinstudy-debug/torchquery/main/tch.png" width="600" alt="TorchQuery Logo">
 </p>
