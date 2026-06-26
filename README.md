@@ -1,4 +1,4 @@
-<img src="path/to/your/tch.png" width="100%">
+<img src="path/to/Torchquery/tch.png" width="100%">
 
 #TorchQuery 🛡️
 
