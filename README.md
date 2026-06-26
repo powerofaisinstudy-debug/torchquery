@@ -1,3 +1,5 @@
+<img src="path/to/your/tch.png" width="100%">
+
 #TorchQuery 🛡️
 
 <p align="center">
